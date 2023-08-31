@@ -112,6 +112,7 @@ export interface Props {
   position?: Position
   scale?: number
   rotate?: number
+  flip?: 'horizontal' | 'vertical'
   borderRadius?: number
   crossOrigin?: '' | 'anonymous' | 'use-credentials'
   onLoadFailure?: () => void
@@ -341,6 +342,16 @@ class AvatarEditor extends React.Component<PropsWithDefaults, State> {
     if (this.props.backgroundColor) {
       context.fillStyle = this.props.backgroundColor
       context.fillRect(0, 0, canvas.width, canvas.height)
+    }
+    if(this.props.flip != undefined) {
+      switch(this.props.flip) {
+        case 'horizontal':
+          context.rotate((this.props.rotate * Math.PI) / 180)
+          break
+        case 'vertical':
+          context.rotate((this.props.rotate * Math.PI) / 180)
+          break
+      }
     }
 
     context.drawImage(image.resource, -cropRect.x, -cropRect.y)
