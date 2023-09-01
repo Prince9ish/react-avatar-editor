@@ -27,7 +27,7 @@
     "semi": false
   },
   "description": "This adds Flips",
-  "main": "index.js",
+  "main": "lib/src/index.ts",
   "repository": "https://github.com/Prince9ish/react-avatar-editor.git",
   "author": "Prince",
   "private": false
