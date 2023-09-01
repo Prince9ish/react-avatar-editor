@@ -94,6 +94,7 @@ const defaultEmptyImage = {
 }
 
 type BorderType = [number, number] | number
+type FlipType = 'horizontal' | 'vertical' | 'none'
 
 interface ImageState {
   x: number
@@ -112,7 +113,7 @@ export interface Props {
   position?: Position
   scale?: number
   rotate?: number
-  flip?: 'horizontal' | 'vertical'
+  flip?: FlipType
   borderRadius?: number
   crossOrigin?: '' | 'anonymous' | 'use-credentials'
   onLoadFailure?: () => void
@@ -155,6 +156,7 @@ class AvatarEditor extends React.Component<PropsWithDefaults, State> {
     scale: 1,
     rotate: 0,
     border: 25,
+    flip: 'none',
     borderRadius: 0,
     width: 200,
     height: 200,
@@ -218,6 +220,7 @@ class AvatarEditor extends React.Component<PropsWithDefaults, State> {
       prevProps.image !== this.props.image ||
       prevProps.width !== this.props.width ||
       prevProps.height !== this.props.height ||
+      prevProps.flip !== this.props.flip ||
       prevProps.position !== this.props.position ||
       prevProps.scale !== this.props.scale ||
       prevProps.rotate !== this.props.rotate ||
@@ -702,6 +705,7 @@ class AvatarEditor extends React.Component<PropsWithDefaults, State> {
     const {
       scale,
       rotate,
+      flip,
       image,
       border,
       borderRadius,
