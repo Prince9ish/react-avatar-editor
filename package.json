@@ -1,9 +1,9 @@
 {
-  "name": "react-avatar-editor-mono",
+  "name": "react-avatar-editor",
   "engines": {
     "pnpm": "7.x"
   },
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "build": "pnpm --filter react-avatar-editor build",
     "clean": "pnpm --filter 'react-avatar-editor*' clean",
@@ -25,5 +25,10 @@
     "singleQuote": true,
     "trailingComma": "all",
     "semi": false
-  }
+  },
+  "description": "This adds Flips",
+  "main": "index.js",
+  "repository": "https://github.com/Prince9ish/react-avatar-editor.git",
+  "author": "Prince",
+  "private": false
 }
